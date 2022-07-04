@@ -32,6 +32,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/Matrices.hpp>
 #include <qpOASES/LapackBlasReplacement.hpp>
 
@@ -303,12 +304,12 @@ returnValue DenseMatrix::getSparseSubmatrix (int_t irowsLength, const int_t* con
 
 returnValue DenseMatrix::times(	int_t xN, real_t alpha, const real_t* x, int_t xLD, real_t beta, real_t* y, int_t yLD ) const
 {
-	la_uint_t _xN     = (la_uint_t)xN;
-	la_uint_t _nRows  = (la_uint_t)nRows;
-	la_uint_t _nCols  = (la_uint_t)nCols;
-	la_uint_t _leaDim = (la_uint_t)getMax(1,nCols);
-	la_uint_t _xLD    = (la_uint_t)getMax(1,xLD);
-	la_uint_t _yLD    = (la_uint_t)getMax(1,yLD);
+	int_t _xN     = xN;
+	int_t _nRows  = nRows;
+	int_t _nCols  = nCols;
+	int_t _leaDim = getMax(1,nCols);
+	int_t _xLD    = getMax(1,xLD);
+	int_t _yLD    = getMax(1,yLD);
 
 	/* Call BLAS. Mind row major format! */
 	GEMM( "TRANS", "NOTRANS", &_nRows, &_xN, &_nCols, &alpha, val, &_leaDim, x, &_xLD, &beta, y, &_yLD );
@@ -317,12 +318,12 @@ returnValue DenseMatrix::times(	int_t xN, real_t alpha, const real_t* x, int_t x
 
 returnValue DenseMatrix::transTimes( int_t xN, real_t alpha, const real_t* x, int_t xLD, real_t beta, real_t* y, int_t yLD ) const
 {
-	la_uint_t _xN     = (la_uint_t)xN;
-	la_uint_t _nRows  = (la_uint_t)nRows;
-	la_uint_t _nCols  = (la_uint_t)nCols;
-	la_uint_t _leaDim = (la_uint_t)getMax(1,nCols);
-	la_uint_t _xLD    = (la_uint_t)getMax(1,xLD);
-	la_uint_t _yLD    = (la_uint_t)getMax(1,yLD);
+	int_t _xN     = xN;
+	int_t _nRows  = nRows;
+	int_t _nCols  = nCols;
+	int_t _leaDim = getMax(1,nCols);
+	int_t _xLD    = getMax(1,xLD);
+	int_t _yLD    = getMax(1,yLD);
 
 	/* Call BLAS. Mind row major format! */
 	GEMM( "NOTRANS", "NOTRANS", &_nCols, &_xN, &_nRows, &alpha, val, &_leaDim, x, &_xLD, &beta, y, &_yLD );

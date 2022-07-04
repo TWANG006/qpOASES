@@ -32,12 +32,14 @@
  *
  */
 
-
+#include <pch.h>
 #include <stdio.h>
+
 
 #ifdef __MATLAB__
   #include "mex.h"
 #endif
+
 
 #include <qpOASES/MessageHandling.hpp>
 #include <qpOASES/Utils.hpp>

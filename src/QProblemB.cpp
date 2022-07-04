@@ -33,6 +33,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/QProblemB.hpp>
 #include <qpOASES/LapackBlasReplacement.hpp>
 
@@ -1412,8 +1413,8 @@ returnValue QProblemB::computeCholesky( )
 					H->getCol (FR_idx[j], bounds.getFree (), 1.0, &(R[j*nV]) );
 
 				/* R'*R = H */
-				la_int_t info = 0;
-				la_uint_t _nFR = (la_uint_t)nFR, _nV = (la_uint_t)nV;
+				int_t info = 0;
+				int_t _nFR = nFR, _nV = nV;
 
 				POTRF( "U", &_nFR, R, &_nV, &info );
 

@@ -38,6 +38,7 @@
 #define QPOASES_QPROBLEM_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/QProblemB.hpp>
 #include <qpOASES/Constraints.hpp>
 #include <qpOASES/ConstraintProduct.hpp>
@@ -58,7 +59,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class QProblem : public QProblemB
+class QPOASES_API QProblem : public QProblemB
 {
 	/* allow SolutionAnalysis class to access private members */
 	friend class SolutionAnalysis;

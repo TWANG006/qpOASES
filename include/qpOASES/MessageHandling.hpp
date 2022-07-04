@@ -43,6 +43,7 @@
 #include <assert.h>
 #endif
 
+#include <qpOASES.h>
 #include <qpOASES/Constants.hpp>
 
 
@@ -241,7 +242,7 @@ RET_SIMPLE_STATUS_M3							/**< QP problem is unbounded (and thus could not be s
  *	\version 3.2
  *	\date 2007-2017
  */
-class MessageHandling
+class QPOASES_API MessageHandling
 {
 	/*
 	 *	INTERNAL DATA STRUCTURES

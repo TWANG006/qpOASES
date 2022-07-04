@@ -32,7 +32,7 @@
  *	bounds within a QProblem.
  */
 
-
+#include <pch.h>
 #include <qpOASES/Bounds.hpp>
 
 

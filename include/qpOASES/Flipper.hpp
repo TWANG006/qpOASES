@@ -37,6 +37,7 @@
 #define QPOASES_FLIPPER_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/Bounds.hpp>
 #include <qpOASES/Constraints.hpp>
 
@@ -54,7 +55,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class Flipper
+class QPOASES_API Flipper
 {
 	friend class QProblemB;
 	friend class QProblem;

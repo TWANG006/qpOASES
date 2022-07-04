@@ -34,6 +34,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/extras/SolutionAnalysis.hpp>
 
 

@@ -36,7 +36,7 @@
 #ifndef QPOASES_BOUNDS_HPP
 #define QPOASES_BOUNDS_HPP
 
-
+#include <qpOASES.h>
 #include <qpOASES/SubjectTo.hpp>
 
 
@@ -53,7 +53,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class Bounds : public SubjectTo
+class QPOASES_API Bounds : public SubjectTo
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

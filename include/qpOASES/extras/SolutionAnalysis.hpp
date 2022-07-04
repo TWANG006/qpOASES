@@ -37,6 +37,7 @@
 #define QPOASES_SOLUTIONANALYSIS_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/SQProblem.hpp>
 #include <qpOASES/SQProblemSchur.hpp>
 
@@ -54,7 +55,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2008-2017
  */
-class SolutionAnalysis
+class QPOASES_API SolutionAnalysis
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

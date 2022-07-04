@@ -39,6 +39,7 @@
 #define QPOASES_QPROBLEMB_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/Flipper.hpp>
 #include <qpOASES/Options.hpp>
 #include <qpOASES/Matrices.hpp>
@@ -60,7 +61,7 @@ class SolutionAnalysis;
  *	\version 3.2
  *	\date 2007-2017
  */
-class QProblemB
+class QPOASES_API QProblemB
 {
 	/* allow SolutionAnalysis class to access private members */
 	friend class SolutionAnalysis;

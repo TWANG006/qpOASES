@@ -33,6 +33,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/QProblem.hpp>
 #include <qpOASES/LapackBlasReplacement.hpp>
 
@@ -2103,8 +2104,8 @@ returnValue QProblem::computeProjectedCholesky( )
 	}
 
 	/* R'*R = Z'*H*Z */
-	la_int_t info = 0;
-	la_uint_t _nZ = (la_uint_t)nZ, _nV = (la_uint_t)nV;
+	int_t info = 0;
+	int_t _nZ = nZ, _nV = nV;
 
 	POTRF( "U", &_nZ, R, &_nV, &info );
 

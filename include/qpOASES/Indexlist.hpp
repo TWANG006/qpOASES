@@ -36,7 +36,7 @@
 #ifndef QPOASES_INDEXLIST_HPP
 #define QPOASES_INDEXLIST_HPP
 
-
+#include <qpOASES.h>
 #include <qpOASES/Utils.hpp>
 
 
@@ -52,7 +52,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class Indexlist
+class QPOASES_API Indexlist
 {
 	/*
 	 *  FRIENDS

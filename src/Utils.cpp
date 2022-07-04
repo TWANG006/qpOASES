@@ -32,6 +32,7 @@
  */
 
 
+#include <pch.h>
 #include <math.h>
 
 #if defined(__WIN32__) || defined(WIN32)
@@ -56,7 +57,7 @@
 #ifdef __NO_SNPRINTF__
 #if (!defined(_MSC_VER)) || defined(__DSPACE__) || defined(__XPCTARGET__)
 /* If snprintf is not available, provide an empty implementation. */
-int snprintf( char* s, size_t n, const char* format, ... )
+QPOASES_API int snprintf( char* s, size_t n, const char* format, ... )
 {
 	if ( n > 0 )
 		s[0] = '\0';
@@ -73,7 +74,7 @@ BEGIN_NAMESPACE_QPOASES
 /*
  *	p r i n t
  */
-returnValue print( const real_t* const v, int_t n, const char* name )
+QPOASES_API returnValue print( const real_t* const v, int_t n, const char* name )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -104,7 +105,7 @@ returnValue print( const real_t* const v, int_t n, const char* name )
 /*
  *	p r i n t
  */
-returnValue print(	const real_t* const v, int_t n, const int_t* const V_idx, const char* name )
+QPOASES_API returnValue print(	const real_t* const v, int_t n, const int_t* const V_idx, const char* name )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -135,7 +136,7 @@ returnValue print(	const real_t* const v, int_t n, const int_t* const V_idx, con
 /*
  *	p r i n t
  */
-returnValue print( const real_t* const M, int_t nrow, int_t ncol, const char* name )
+QPOASES_API returnValue print( const real_t* const M, int_t nrow, int_t ncol, const char* name )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -163,7 +164,7 @@ returnValue print( const real_t* const M, int_t nrow, int_t ncol, const char* na
 /*
  *	p r i n t
  */
-returnValue print(	const real_t* const M, int_t nrow, int_t ncol, const int_t* const ROW_idx, const int_t* const COL_idx, const char* name )
+QPOASES_API returnValue print(	const real_t* const M, int_t nrow, int_t ncol, const int_t* const ROW_idx, const int_t* const COL_idx, const char* name )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -191,7 +192,7 @@ returnValue print(	const real_t* const M, int_t nrow, int_t ncol, const int_t* c
 /*
  *	p r i n t
  */
-returnValue print( const int_t* const index, int_t n, const char* name )
+QPOASES_API returnValue print( const int_t* const index, int_t n, const char* name )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -222,7 +223,7 @@ returnValue print( const int_t* const index, int_t n, const char* name )
 /*
  *	m y P r i n t f
  */
-returnValue myPrintf( const char* s )
+QPOASES_API returnValue myPrintf( const char* s )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 
@@ -252,7 +253,7 @@ returnValue myPrintf( const char* s )
 /*
  *	p r i n t C o p y r i g h t N o t i c e
  */
-returnValue printCopyrightNotice( )
+QPOASES_API returnValue printCopyrightNotice( )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 		#ifndef __XPCTARGET__
@@ -270,7 +271,7 @@ returnValue printCopyrightNotice( )
 /*
  *	r e a d F r o m F i l e
  */
-returnValue readFromFile(	real_t* data, int_t nrow, int_t ncol,
+QPOASES_API returnValue readFromFile(	real_t* data, int_t nrow, int_t ncol,
 							const char* datafilename
 							)
 {
@@ -324,7 +325,7 @@ returnValue readFromFile(	real_t* data, int_t nrow, int_t ncol,
 /*
  *	r e a d F r o m F i l e
  */
-returnValue readFromFile(	real_t* data, int_t n,
+QPOASES_API returnValue readFromFile(	real_t* data, int_t n,
 							const char* datafilename
 							)
 {
@@ -336,7 +337,7 @@ returnValue readFromFile(	real_t* data, int_t n,
 /*
  *	r e a d F r o m F i l e
  */
-returnValue readFromFile(	int_t* data, int_t n,
+QPOASES_API returnValue readFromFile(	int_t* data, int_t n,
 							const char* datafilename
 							)
 {
@@ -385,7 +386,7 @@ returnValue readFromFile(	int_t* data, int_t n,
 /*
  *	w r i t e I n t o F i l e
  */
-returnValue writeIntoFile(	const real_t* const data, int_t nrow, int_t ncol,
+QPOASES_API returnValue writeIntoFile(	const real_t* const data, int_t nrow, int_t ncol,
 							const char* datafilename, BooleanType append
 							)
 {
@@ -441,7 +442,7 @@ returnValue writeIntoFile(	const real_t* const data, int_t nrow, int_t ncol,
 /*
  *	w r i t e I n t o F i l e
  */
-returnValue writeIntoFile(	const real_t* const data, int_t n,
+QPOASES_API returnValue writeIntoFile(	const real_t* const data, int_t n,
 							const char* datafilename, BooleanType append
 							)
 {
@@ -452,7 +453,7 @@ returnValue writeIntoFile(	const real_t* const data, int_t n,
 /*
  *	w r i t e I n t o F i l e
  */
-returnValue writeIntoFile(	const int_t* const integer, int_t n,
+QPOASES_API returnValue writeIntoFile(	const int_t* const integer, int_t n,
 							const char* datafilename, BooleanType append
 							)
 {
@@ -504,7 +505,7 @@ returnValue writeIntoFile(	const int_t* const integer, int_t n,
 /*
  *	w r i t e I n t o M a t F i l e
  */
-returnValue writeIntoMatFile(	FILE* const matFile,
+QPOASES_API returnValue writeIntoMatFile(	FILE* const matFile,
 								const real_t* const data, int_t nRows, int_t nCols, const char* name
 								)
 {
@@ -556,7 +557,7 @@ returnValue writeIntoMatFile(	FILE* const matFile,
 /*
  *	w r i t e I n t o M a t F i l e
  */
-returnValue writeIntoMatFile(	FILE* const matFile,
+QPOASES_API returnValue writeIntoMatFile(	FILE* const matFile,
 								const int_t* const data, int_t nRows, int_t nCols, const char* name
 								)
 {
@@ -578,7 +579,7 @@ returnValue writeIntoMatFile(	FILE* const matFile,
 /*
  *	g e t C P U t i m e
  */
-real_t getCPUtime( )
+QPOASES_API real_t getCPUtime( )
 {
 	real_t current_time = -1.0;
 
@@ -600,7 +601,7 @@ real_t getCPUtime( )
 /*
  *	g e t N o r m
  */
-real_t getNorm( const real_t* const v, int_t n, int_t type )
+QPOASES_API real_t getNorm( const real_t* const v, int_t n, int_t type )
 {
 	int_t i;
 
@@ -628,7 +629,7 @@ real_t getNorm( const real_t* const v, int_t n, int_t type )
 /*
  *	g e t K k t V i o l a t i o n
  */
-returnValue getKktViolation(	int_t nV, int_t nC,
+QPOASES_API returnValue getKktViolation(	int_t nV, int_t nC,
 								const real_t* const H, const real_t* const g, const real_t* const A,
 								const real_t* const lb, const real_t* const ub, const real_t* const lbA, const real_t* const ubA,
 								const real_t* const x, const real_t* const y,
@@ -789,7 +790,7 @@ returnValue getKktViolation(	int_t nV, int_t nC,
 /*
  *	g e t K k t V i o l a t i o n
  */
-returnValue getKktViolation(	int_t nV,
+QPOASES_API returnValue getKktViolation(	int_t nV,
 								const real_t* const H, const real_t* const g,
 								const real_t* const lb, const real_t* const ub,
 								const real_t* const x, const real_t* const y,
@@ -809,7 +810,7 @@ returnValue getKktViolation(	int_t nV,
 /*
  *	c o n v e r t B o o l e a n T y p e T o S t r i n g
  */
-returnValue convertBooleanTypeToString( BooleanType value, char* const string )
+QPOASES_API returnValue convertBooleanTypeToString( BooleanType value, char* const string )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 	if ( value == BT_FALSE )
@@ -825,7 +826,7 @@ returnValue convertBooleanTypeToString( BooleanType value, char* const string )
 /*
  *	c o n v e r t S u b j e c t T o S t a t u s T o S t r i n g
  */
-returnValue convertSubjectToStatusToString( SubjectToStatus value, char* const string )
+QPOASES_API returnValue convertSubjectToStatusToString( SubjectToStatus value, char* const string )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 	switch( value )
@@ -867,7 +868,7 @@ returnValue convertSubjectToStatusToString( SubjectToStatus value, char* const s
 /*
  *	c o n v e r t P r i n t L e v e l T o S t r i n g
  */
-returnValue convertPrintLevelToString( PrintLevel value, char* const string )
+QPOASES_API returnValue convertPrintLevelToString( PrintLevel value, char* const string )
 {
 	#ifndef __SUPPRESSANYOUTPUT__
 	switch( value )
@@ -909,7 +910,7 @@ returnValue convertPrintLevelToString( PrintLevel value, char* const string )
 /*
  *	g e t S i m p l e S t a t u s
  */
-int_t getSimpleStatus(	returnValue returnvalue,
+QPOASES_API int_t getSimpleStatus(	returnValue returnvalue,
 						BooleanType doPrintStatus
 						)
 {
@@ -960,7 +961,7 @@ int_t getSimpleStatus(	returnValue returnvalue,
 /*
  *	n o r m a l i s e C o n s t r a i n t s
  */
-returnValue normaliseConstraints(	int_t nV, int_t nC,
+QPOASES_API returnValue normaliseConstraints(	int_t nV, int_t nC,
 									real_t* A, real_t* lbA, real_t* ubA,
 									int_t type
 									)

@@ -33,6 +33,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/SparseSolver.hpp>
 
 #ifndef __MATLAB__

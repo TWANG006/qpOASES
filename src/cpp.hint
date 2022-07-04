@@ -1,0 +1,2 @@
+#define QPOASES_API __declspec(dllexport)
+#define QPOASES_API __declspec(dllimport)

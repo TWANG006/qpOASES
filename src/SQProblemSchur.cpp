@@ -34,6 +34,8 @@
  *	systems.
  */
 
+
+#include <pch.h>
 #include <qpOASES/SQProblemSchur.hpp>
 #include <qpOASES/LapackBlasReplacement.hpp>
 
@@ -2396,11 +2398,11 @@ returnValue SQProblemSchur::updateSchurQR( int_t idxDel )
 
 	/* Estimate condition number of R (= condition number of S)*/
 	real_t *WORK;
-	unsigned long N = (unsigned long)nS;
-	unsigned long LDA = (unsigned long)nSmax;
-	unsigned long *IWORK;
-	long INFO = 0;
-	IWORK = new unsigned long[N];
+	int N = nS;
+	int LDA = nSmax;
+	int*IWORK;
+	int INFO = 0;
+	IWORK = new int[N];
 	WORK = new real_t[3*N];
 	TRCON( "1", "U", "N", &N, R_, &LDA, &rcondS, WORK, IWORK, &INFO );
 	if ( INFO != 0 )
@@ -2433,11 +2435,11 @@ returnValue SQProblemSchur::backsolveSchurQR( int_t dimS, const real_t* const rh
 	}
 
 	int_t i, j;
-	long INFO = 0;
-	unsigned long NRHS = 1;
-	unsigned long M = (unsigned long)dimS;
-	unsigned long LDA = (unsigned long)nSmax;
-	unsigned long LDC = (unsigned long)dimS;
+	int INFO = 0;
+	int NRHS = 1;
+	int M = dimS;
+	int LDA = nSmax;
+	int LDC = dimS;
 
 	for( i=0; i<dimS; i++ )
 		sol[i] = 0.0;

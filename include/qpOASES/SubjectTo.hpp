@@ -37,6 +37,7 @@
 #define QPOASES_SUBJECTTO_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/Indexlist.hpp>
 
 
@@ -53,7 +54,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class SubjectTo
+class QPOASES_API SubjectTo
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

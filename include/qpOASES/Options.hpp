@@ -37,6 +37,7 @@
 #define QPOASES_OPTIONS_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/Utils.hpp>
 
 
@@ -53,7 +54,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class Options
+class QPOASES_API Options
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

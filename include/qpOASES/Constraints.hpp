@@ -37,6 +37,7 @@
 #define QPOASES_CONSTRAINTS_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/SubjectTo.hpp>
 
 
@@ -53,7 +54,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2007-2017
  */
-class Constraints : public SubjectTo
+class QPOASES_API Constraints : public SubjectTo
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

@@ -39,6 +39,7 @@
 #ifndef QPOASES_CONSTRAINT_PRODUCT_HPP
 #define QPOASES_CONSTRAINT_PRODUCT_HPP
 
+#include <qpOASES.h>
 
 BEGIN_NAMESPACE_QPOASES
 
@@ -54,7 +55,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2009-2017
  */
-class ConstraintProduct
+class QPOASES_API ConstraintProduct
 {
 	public:
 		/** Default constructor. */

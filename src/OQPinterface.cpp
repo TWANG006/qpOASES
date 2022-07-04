@@ -36,6 +36,7 @@
  */
 
 
+#include <pch.h>
 #include <qpOASES/extras/OQPinterface.hpp>
 #include <qpOASES/QProblem.hpp>
 
@@ -46,7 +47,7 @@ BEGIN_NAMESPACE_QPOASES
 /*
  *	r e a d O q p D i m e n s i o n s
  */
-returnValue readOqpDimensions(	const char* path,
+QPOASES_API returnValue readOqpDimensions(	const char* path,
 								int_t& nQP, int_t& nV, int_t& nC, int_t& nEC
 								)
 {
@@ -76,7 +77,7 @@ returnValue readOqpDimensions(	const char* path,
 /*
  *	r e a d O q p D a t a
  */
-returnValue readOqpData(	const char* path,
+QPOASES_API returnValue readOqpData(	const char* path,
 							int_t& nQP, int_t& nV, int_t& nC, int_t& nEC,
 							real_t** H, real_t** g, real_t** A, real_t** lb, real_t** ub, real_t** lbA, real_t** ubA,
 							real_t** xOpt, real_t** yOpt, real_t** objOpt
@@ -227,7 +228,7 @@ returnValue readOqpData(	const char* path,
 /*
  *	s o l v e O q p B e n c h m a r k
  */
-returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
+QPOASES_API returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
 								const real_t* const _H, const real_t* const g, const real_t* const _A,
 								const real_t* const lb, const real_t* const ub,
 								const real_t* const lbA, const real_t* const ubA,
@@ -257,7 +258,7 @@ returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
 /*
  *	s o l v e O q p B e n c h m a r k
  */
-returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
+QPOASES_API returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
 								const real_t* const _H, const real_t* const g, const real_t* const _A,
 								const real_t* const lb, const real_t* const ub,
 								const real_t* const lbA, const real_t* const ubA,
@@ -404,7 +405,7 @@ returnValue solveOqpBenchmark(	int_t nQP, int_t nV, int_t nC, int_t nEC,
 /*
  *	s o l v e O q p B e n c h m a r k
  */
-returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
+QPOASES_API returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
 								const real_t* const _H, const real_t* const g,
 								const real_t* const lb, const real_t* const ub,
 								BooleanType isSparse, 
@@ -432,7 +433,7 @@ returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
 /*
  *	s o l v e O q p B e n c h m a r k
  */
-returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
+QPOASES_API returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
 								const real_t* const _H, const real_t* const g,
 								const real_t* const lb, const real_t* const ub,
 								BooleanType isSparse, BooleanType useHotstarts, 
@@ -566,7 +567,7 @@ returnValue solveOqpBenchmark(	int_t nQP, int_t nV,
 /*
  *	r u n O q p B e n c h m a r k
  */
-returnValue runOqpBenchmark(	const char* path, BooleanType isSparse, const Options& options,
+QPOASES_API returnValue runOqpBenchmark(	const char* path, BooleanType isSparse, const Options& options,
 								int_t& nWSR, real_t& maxCPUtime,
 								real_t& maxStationarity, real_t& maxFeasibility, real_t& maxComplementarity
 								)
@@ -589,7 +590,7 @@ returnValue runOqpBenchmark(	const char* path, BooleanType isSparse, const Optio
 /*
  *	r u n O q p B e n c h m a r k
  */
-returnValue runOqpBenchmark(	const char* path, BooleanType isSparse, BooleanType useHotstarts, 
+QPOASES_API returnValue runOqpBenchmark(	const char* path, BooleanType isSparse, BooleanType useHotstarts,
 								const Options& options, int_t maxAllowedNWSR,
 								real_t& maxNWSR, real_t& avgNWSR, real_t& maxCPUtime, real_t& avgCPUtime,
 								real_t& maxStationarity, real_t& maxFeasibility, real_t& maxComplementarity

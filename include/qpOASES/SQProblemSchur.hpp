@@ -39,6 +39,7 @@
 #define QPOASES_SQPROBLEMSCHUR_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/SQProblem.hpp>
 #include <qpOASES/SparseSolver.hpp>
 
@@ -57,7 +58,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2012-2017
  */
-class SQProblemSchur : public SQProblem
+class QPOASES_API SQProblemSchur : public SQProblem
 {
 	/* allow SolutionAnalysis class to access private members */
 	friend class SolutionAnalysis;

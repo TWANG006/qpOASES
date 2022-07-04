@@ -36,6 +36,8 @@
 #ifndef QPOASES_LAPACKBLASREPLACEMENT_HPP
 #define QPOASES_LAPACKBLASREPLACEMENT_HPP
 
+#define MKL_DIRECT_CALL
+#include <mkl.h>
 
 #ifdef __AVOID_LA_NAMING_CONFLICTS__
 
@@ -89,36 +91,36 @@
 #endif /* __USE_SINGLE_PRECISION__ */
 
 
-extern "C"
-{
-	/** Performs one of the matrix-matrix operation in double precision. */
-	void DGEMM(		const char*, const char*, const la_uint_t*, const la_uint_t*, const la_uint_t*,
-					const double*, const double*, const la_uint_t*, const double*, const la_uint_t*,
-					const double*, double*, const la_uint_t* );
-	/** Performs one of the matrix-matrix operation in single precision. */
-	void SGEMM(		const char*, const char*, const la_uint_t*, const la_uint_t*, const la_uint_t*,
-					const float*, const float*, const la_uint_t*, const float*, const la_uint_t*,
-					const float*, float*, const la_uint_t* );
-
-	/** Calculates the Cholesky factorization of a real symmetric positive definite matrix in double precision. */
-	void DPOTRF(	const char*, const la_uint_t*, double*, const la_uint_t*, la_int_t* );
-	/** Calculates the Cholesky factorization of a real symmetric positive definite matrix in single precision. */
-	void SPOTRF(	const char*, const la_uint_t*, float*, const la_uint_t*, la_int_t* );
-
-	/** Solves a triangular system (double precision) */
-	void DTRTRS(	const char* UPLO, const char* TRANS, const char* DIAG, const la_uint_t* N, const la_uint_t* NRHS,
-					double* A, const la_uint_t* LDA, double* B, const la_uint_t* LDB, la_int_t* INFO );
-	/** Solves a triangular system (single precision) */
-	void STRTRS(	const char* UPLO, const char* TRANS, const char* DIAG, const la_uint_t* N, const la_uint_t* NRHS,
-					float* A, const la_uint_t* LDA, float* B, const la_uint_t* LDB, la_int_t* INFO );
-
-	/** Estimate the reciprocal of the condition number of a triangular matrix in double precision */
-	void DTRCON(	const char* NORM, const char* UPLO, const char* DIAG, const la_uint_t* N, double* A, const la_uint_t* LDA,
-					double* RCOND, double* WORK, const la_uint_t* IWORK, la_int_t* INFO );
-	/** Estimate the reciprocal of the condition number of a triangular matrix in single precision */
-	void STRCON(	const char* NORM, const char* UPLO, const char* DIAG, const la_uint_t* N, float* A, const la_uint_t* LDA,
-					float* RCOND, float* WORK, const la_uint_t* IWORK, la_int_t* INFO );
-}
+//extern "C"
+//{
+//	/** Performs one of the matrix-matrix operation in double precision. */
+//	void DGEMM(		const char*, const char*, const la_uint_t*, const la_uint_t*, const la_uint_t*,
+//					const double*, const double*, const la_uint_t*, const double*, const la_uint_t*,
+//					const double*, double*, const la_uint_t* );
+//	/** Performs one of the matrix-matrix operation in single precision. */
+//	void SGEMM(		const char*, const char*, const la_uint_t*, const la_uint_t*, const la_uint_t*,
+//					const float*, const float*, const la_uint_t*, const float*, const la_uint_t*,
+//					const float*, float*, const la_uint_t* );
+//
+//	/** Calculates the Cholesky factorization of a real symmetric positive definite matrix in double precision. */
+//	void DPOTRF(	const char*, const la_uint_t*, double*, const la_uint_t*, la_int_t* );
+//	/** Calculates the Cholesky factorization of a real symmetric positive definite matrix in single precision. */
+//	void SPOTRF(	const char*, const la_uint_t*, float*, const la_uint_t*, la_int_t* );
+//
+//	/** Solves a triangular system (double precision) */
+//	void DTRTRS(	const char* UPLO, const char* TRANS, const char* DIAG, const la_uint_t* N, const la_uint_t* NRHS,
+//					double* A, const la_uint_t* LDA, double* B, const la_uint_t* LDB, la_int_t* INFO );
+//	/** Solves a triangular system (single precision) */
+//	void STRTRS(	const char* UPLO, const char* TRANS, const char* DIAG, const la_uint_t* N, const la_uint_t* NRHS,
+//					float* A, const la_uint_t* LDA, float* B, const la_uint_t* LDB, la_int_t* INFO );
+//
+//	/** Estimate the reciprocal of the condition number of a triangular matrix in double precision */
+//	void DTRCON(	const char* NORM, const char* UPLO, const char* DIAG, const la_uint_t* N, double* A, const la_uint_t* LDA,
+//					double* RCOND, double* WORK, const la_uint_t* IWORK, la_int_t* INFO );
+//	/** Estimate the reciprocal of the condition number of a triangular matrix in single precision */
+//	void STRCON(	const char* NORM, const char* UPLO, const char* DIAG, const la_uint_t* N, float* A, const la_uint_t* LDA,
+//					float* RCOND, float* WORK, const la_uint_t* IWORK, la_int_t* INFO );
+//}
 
 #endif	/* QPOASES_LAPACKBLASREPLACEMENT_HPP */
 

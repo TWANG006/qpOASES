@@ -35,6 +35,8 @@
 #ifndef QPOASES_SPARSESOLVER_HPP
 #define QPOASES_SPARSESOLVER_HPP
 
+
+#include <qpOASES.h>
 #include <qpOASES/Utils.hpp>
 
 
@@ -49,7 +51,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2012-2017
  */
-class SparseSolver
+class QPOASES_API SparseSolver
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS
@@ -129,7 +131,7 @@ class SparseSolver
  *	\version 3.2
  *	\date 2012-2017
  */
-class Ma27SparseSolver: public SparseSolver
+class QPOASES_API Ma27SparseSolver: public SparseSolver
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS
@@ -243,7 +245,7 @@ class Ma27SparseSolver: public SparseSolver
  *	\version 3.2
  *	\date 2013-2017
  */
-class Ma57SparseSolver: public SparseSolver
+class QPOASES_API Ma57SparseSolver: public SparseSolver
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS
@@ -358,7 +360,7 @@ class Ma57SparseSolver: public SparseSolver
  *	\version 3.2
  *	\date 2015-2017
  */
-class DummySparseSolver: public SparseSolver
+class QPOASES_API DummySparseSolver: public SparseSolver
 {
 	/*
 	 *	PUBLIC MEMBER FUNCTIONS

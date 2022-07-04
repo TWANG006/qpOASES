@@ -38,6 +38,7 @@
 #define QPOASES_MATRICES_HPP
 
 
+#include <qpOASES.h>
 #include <qpOASES/Utils.hpp>
 #include <qpOASES/Indexlist.hpp>
 
@@ -56,7 +57,7 @@ BEGIN_NAMESPACE_QPOASES
  *	\version 3.2
  *	\date 2011-2017
  */
-class Matrix
+class QPOASES_API Matrix
 {
 	public:
 		/** Default constructor. */
@@ -289,7 +290,7 @@ class Matrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class SymmetricMatrix : public virtual Matrix
+class QPOASES_API SymmetricMatrix : public virtual Matrix
 {
 	public:
 		/** Default constructor. */
@@ -325,7 +326,7 @@ class SymmetricMatrix : public virtual Matrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class DenseMatrix : public virtual Matrix
+class QPOASES_API DenseMatrix : public virtual Matrix
 {
 	public:
 		/** Default constructor. */
@@ -508,7 +509,7 @@ class DenseMatrix : public virtual Matrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class SymDenseMat : public DenseMatrix, public SymmetricMatrix
+class QPOASES_API SymDenseMat : public DenseMatrix, public SymmetricMatrix
 {
 	public:
 		/** Default constructor. */
@@ -554,7 +555,7 @@ class SymDenseMat : public DenseMatrix, public SymmetricMatrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class SparseMatrix : public virtual Matrix
+class QPOASES_API SparseMatrix : public virtual Matrix
 {
 	public:
 		/** Default constructor. */
@@ -748,7 +749,7 @@ class SparseMatrix : public virtual Matrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class SparseMatrixRow : public virtual Matrix
+class QPOASES_API SparseMatrixRow : public virtual Matrix
 {
 	public:
 		/** Default constructor. */
@@ -933,7 +934,7 @@ class SparseMatrixRow : public virtual Matrix
  *	\version 3.2
  *	\date 2011-2017
  */
-class SymSparseMat : public SymmetricMatrix, public SparseMatrix
+class QPOASES_API SymSparseMat : public SymmetricMatrix, public SparseMatrix
 {
 	public:
 		/** Default constructor. */
